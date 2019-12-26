@@ -86,7 +86,6 @@ function clearCanvas() {
 function transfer() {
   // Update status message
   statusMsg.html('Магия в действии...');
-
   // Select canvas DOM element
   const canvasElement = select('canvas').elt;
 
