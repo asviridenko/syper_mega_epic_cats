@@ -68,7 +68,7 @@ function modelLoaded() {
   //transfer();
   // Attach a mousePressed event to the transfer button
   transferBtn.mousePressed(function() {
-  statusMsg.html('Магия в действии...');
+
     transfer();
   });
 }
@@ -85,7 +85,7 @@ function clearCanvas() {
 
 function transfer() {
   // Update status message
-
+  statusMsg.html('Магия в действии...');
 
   // Select canvas DOM element
   const canvasElement = select('canvas').elt;
