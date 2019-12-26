@@ -48,7 +48,7 @@ function setup() {
   pixelDensity(1);
 
   // Create a pix2pix method with a pre-trained model
-  pix2pix = ml5.pix2pix('model/humanseg_BtoA.pict', modelLoaded);
+  pix2pix = ml5.pix2pix('model/edges2cats_AtoB.pict', modelLoaded);
 }
 
 // Draw on the canvas when mouse is pressed
@@ -68,7 +68,7 @@ function draw() {
 // A function to be called when the models have loaded
 function modelLoaded() {
   // Show 'Model Loaded!' message
-  statusMsg.html('Model Loaded!');
+  statusMsg.html('Убийца подгрузился, пользуйтесь! и не забудьте снести ЭпикКэк с мобилы!');
   // Call transfer function after the model is loaded
   //transfer();
   // Attach a mousePressed event to the transfer button
