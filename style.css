@@ -50,9 +50,6 @@ canvas {
     display: inline-block;
 }
 
-#red {
-    background: rgb(255, 0, 0);
-}
 
 #black {
     background: rgb(0, 0, 0);

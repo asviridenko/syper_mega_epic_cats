@@ -18,10 +18,10 @@ function setup() {
   statusMsg = select('#status');
 
   // Get the buttons
-  currentColor = color(0, 0, 255);
-  currentStroke = 17;
-  select('#red').mousePressed(() => currentColor = color(255, 0, 0));
-  select('#blue').mousePressed(() => currentColor = color(0, 0, 255));
+  currentColor = color(0, 0, 0);
+  currentStroke = 3;
+  select('#white').mousePressed(() => currentColor = color(255, 255, 255));
+  select('#black').mousePressed(() => currentColor = color(0, 0, 0));
   select('#size').mouseReleased(() => currentStroke = select('#size').value());
 
   // Select 'transfer' button html element
@@ -32,15 +32,10 @@ function setup() {
   // Attach a mousePressed event to the 'clear' button
   clearBtn.mousePressed(function() {
     clearCanvas();
-    background(255, 0, 0);
+    background(256, 256, 256);
   });
 
-  randomBtn = select('#randomBtn');
-  randomBtn.mousePressed(function() {
-    let src =['images/seg0.png', 'images/seg1.png', 'images/seg2.png', 'images/seg3.png', 'images/seg4.png', 'images/seg5.png', 'images/seg6.png', 'images/seg7.png', 'images/seg8.png', 'images/seg9.png', 'images/seg10.png', 'images/seg11.png', 'images/seg12.png'];
-    let index = int(random(0, 13));
-    inputImg = loadImage(src[index], drawImage);
-  });
+
 
 
   // Set stroke to black
@@ -73,6 +68,7 @@ function modelLoaded() {
   //transfer();
   // Attach a mousePressed event to the transfer button
   transferBtn.mousePressed(function() {
+  statusMsg.html('Магия в действии...');
     transfer();
   });
 }
@@ -89,7 +85,7 @@ function clearCanvas() {
 
 function transfer() {
   // Update status message
-  statusMsg.html('Магия в действии...');
+
 
   // Select canvas DOM element
   const canvasElement = select('canvas').elt;
@@ -100,7 +96,7 @@ function transfer() {
       console.log(err);
     }
     if (result && result.src) {
-      statusMsg.html('Done!');
+      statusMsg.html('Йехууу, все готово!');
       // Create an image based result
       output.elt.src = result.src;
     }
